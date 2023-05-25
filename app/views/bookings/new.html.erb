@@ -1,0 +1,60 @@
+<div class="bg-salmon pb-5">
+  <div class="top-line-box"><div class="top-line"></div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="ml24 mr24 d-flex flex-column h-100">
+          <h3>Persoonlijke gegevens</h3>
+          <div class="sub-line"></div>
+          <div class="mt36 d-flex flex-column flex-grow-1">
+            <%= simple_form_for(@booking) do |f| %>
+              <%= f.error_notification %>
+              <div class="d-flex justify-content-between">
+                <%= f.input :voornaam, input_html: {class: "input-field shared-input"} %>
+                <%= f.input :achternaam, input_html: {class: "input-field shared-input"} %>
+              </div>
+              <%= f.input :adres, input_html: {class: "input-field"} %>
+              <%= f.input :woonplaats, input_html: {class: "input-field"} %>
+
+              <div class="d-flex justify-content-between">
+                <%= f.input :telefoonnummer, input_html: {class: "input-field shared-input"} %>
+                <%= f.input :mobiel, input_html: {class: "input-field shared-input"} %>
+              </div>
+
+              <%= f.input :email, input_html: {class: "input-field"} %>
+              <%= f.input :identiteitsbewijs, input_html: {class: "input-field"} %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="ml24 mr24 d-flex flex-column h-100">
+          <h3>Huurperiode</h3>
+          <div class="sub-line"></div>
+            <div class="mt36 d-flex flex-column flex-grow-1">
+              <div class="d-flex justify-content-between">
+                <%= f.input :startdatum, as: :date, html5: true, input_html: {class: "input-field shared-input"} %>
+                <%= f.input :einddatum, as: :date, html5: true, input_html: {class: "input-field shared-input"} %>
+              </div>
+
+              <%= f.input :bestuurder, input_html: {class: "input-field"} %>
+
+              <div class="d-flex justify-content-between">
+                <%= f.input :geboortedatum, input_html: {class: "input-field shared-input"} %>
+                <%= f.input :rijbewijsnummer, input_html: {class: "input-field shared-input"} %>
+              </div>
+
+              <%= f.input :bestuurder_twee, input_html: {class: "input-field"} %>
+
+              <div class="d-flex justify-content-between">
+                <%= f.input :geboortedatum_twee, input_html: {class: "input-field shared-input"} %>
+                <%= f.input :rijbewijsnummer_twee, input_html: {class: "input-field shared-input"} %>
+              </div>
+
+              <%= f.submit "BOEKEN", class: "btn-main btn-form" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

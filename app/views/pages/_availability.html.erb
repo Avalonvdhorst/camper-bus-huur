@@ -1,0 +1,33 @@
+<div class="bg-salmon pb-5">
+  <div class="top-line-box"><div class="top-line"></div></div>
+    <div class="container">
+      <h1 class="page-header text-center mb48">Beschikbaarheid</h1>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="d-flex justify-content-center align-items-center mt10">
+            <div class="w75">
+              <p>Zie wanneer de camper beschikbaar is voor verhuur.
+              De camper wordt per week van vrijdag tot vrijdag verhuurd. </p>
+              <p>Lees hier de huurvoorwaarden nog eens goed door.</p>
+              <div class="d-flex align-items-center mt48 mb72">
+                <div class="unavailable"></div>
+                <p class="ml12 no-margin-btm"><strong>Niet beschikbaar</strong></p>
+              </div>
+              <%= link_to "Boeken", new_booking_path, class: "btn-main" %>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-12 col-lg-4">
+          <div>
+            <%= month_calendar do |date| %>
+              <%# day_events = @goal_events.where(end_date: date) %>
+              <div class="calendar-day"><%= date.day %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-line-box"><div class="bottom-line"></div></div>
+</div>

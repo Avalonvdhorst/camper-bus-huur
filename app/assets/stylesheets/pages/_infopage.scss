@@ -1,0 +1,37 @@
+.infopage-header {
+  width: 600px;
+  text-align: center;
+}
+
+.info-box {
+  width: 700px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.info-container {
+  margin-left: 100px;
+  margin-right: 50px;
+  flex-grow: 1;
+
+  i {
+    margin-left: 12px;
+  }
+}
+
+.sub-line {
+  margin-top: 12px;
+  width: 40px;
+  border: 2.5px solid $orange;
+}
+
+.image-box-right {
+  height: 700px;
+  width: 535px;
+}
+
+.image-box-left {
+  height: 430px;
+  width: 500px;
+  object-fit: cover;
+}

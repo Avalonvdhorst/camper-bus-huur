@@ -1,0 +1,23 @@
+.btn-main {
+  background-color: $orange;
+  color: white;
+  padding: 16px 36px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  letter-spacing: 5px;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+    background-color: $dark-orange;
+  }
+}
+
+.btn-main.btn-form {
+  border: 1px solid $orange;
+  padding: 12px 24px;
+  margin-top: auto;
+  align-self: flex-start;
+  transform: translateY(-15px)
+}

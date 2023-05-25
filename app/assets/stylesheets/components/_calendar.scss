@@ -1,0 +1,79 @@
+.sticky-calendar {
+  position: sticky;
+  top: 150px;
+}
+
+.day-marked {
+  background-color: $blocked-gray;
+  border-radius: 10px;
+  margin: 0px 7px;
+  transition: 0.3s ease-in-out;
+}
+
+.day-marked:hover {
+  background-color: #fff1a8;
+  font-weight: bold;
+}
+
+.current-day-marked {
+  border: 5px solid $orange;
+  font-weight: bold;
+}
+
+.calendar-day {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-salmon;
+}
+
+.calendar-title {
+  color: orange;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.calendar-heading i {
+  color: orange;
+  font-size: 24px;
+}
+
+.simple-calendar th {
+  border: none;
+  text-align: center;
+  color: $orange;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+.simple-calendar td {
+  border: none;
+  text-align: center;
+}
+
+.simple-calendar .prev-month {
+  background-color: $light-salmon;
+  color: $light-gray
+}
+
+.simple-calendar .next-month {
+  background-color: $light-salmon;
+  color: $light-gray;
+}
+
+.simple-calendar .day {
+ height: 55px;
+}
+
+.simple-calendar .today {
+  background-color: $light-salmon;
+  color: $orange;
+  font-weight: bold;
+}
+
+.flatpickr-months .flatpickr-month, .flatpickr-weekdays,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+ span.flatpickr-weekday {
+  background-color: $orange;
+}

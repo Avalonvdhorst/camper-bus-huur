@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/navbar' %>
+<div class="home-banner" style="background-image: linear-gradient(119.72deg, rgba(0, 0, 0, 0.7) 47.57%, rgba(0, 0, 0, 0.574) 73.7%, rgba(0, 0, 0, 0) 92.27%), url('<%= image_path("buscamper.JPG") %>');">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="home-content container">
+      <h1>Het avontuur wacht!</h1>
+      <div class="sub-header">
+        <p>Boek onze compleet ingerichte en comfortablele camper en voel je zo vrij als een vogel</p>
+      </div>
+      <%= link_to "BOEKEN", new_booking_path, class: "btn-main" %>
+    </div>
+  </div>
+  <div class="bottom-line-box home"><div class="bottom-line"></div></div>
+</div>
+<%= render 'gallery' %>
+<%= render 'info' %>
+<%= render 'about_us' %>
+<%= render 'availability' %>

@@ -1,0 +1,43 @@
+nl:
+  simple_form:
+    required:
+      text: "moet ingevuld worden"
+    errors:
+      template:
+        body: "De volgende fouten zijn opgetreden:"
+        header:
+          one: "1 fout heeft voorkomen dat deze boeking opgeslagen kon worden:"
+          other: "%{count} fouten hebben voorkomen dat deze boeking opgeslagen kon worden:"
+  activerecord:
+    errors:
+      models:
+        booking:
+          attributes:
+            email:
+              blank: "moet ingevuld worden"
+            voornaam:
+              blank: "moet ingevuld worden"
+            achternaam:
+              blank: "moet ingevuld worden"
+            woonplaats:
+              blank: "moet ingevuld worden"
+            telefoonnummer:
+              blank: "moet ingevuld worden"
+            identiteitsbewijs:
+              blank: "moet ingevuld worden"
+            adres:
+              blank: "moet ingevuld worden"
+            bestuurder:
+              blank: "moet ingevuld worden"
+            geboortedatum:
+              blank: "moet ingevuld worden"
+            rijbewijsnummer:
+              blank: "moet ingevuld worden"
+            startdatum:
+              blank: "moet ingevuld worden"
+            einddatum:
+              blank: "moet ingevuld worden"
+  simple_calendar:
+    date:
+      month_names: ["","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
+      abbr_day_names: ["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"]
