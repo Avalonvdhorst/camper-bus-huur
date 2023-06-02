@@ -1,7 +1,7 @@
 <div class="bg-salmon">
   <div class="top-line-box"><div class="top-line"></div></div>
     <div class="h-100">
-      <div class="d-flex justify-content-center align-items-center">
+      <div id="info" class="d-flex justify-content-center align-items-center">
         <div class="infopage-header"><h1 class="page-header">Camper huren en dan?</h1></div>
       </div>
       <div class="d-flex">
@@ -10,7 +10,7 @@
           <div class="sub-line"></div>
           <div class="info-box">
             <p class="no-margin-btm">Je huurt onze camdiver voor jouw vakantie.
-            Je hebt het huurcontract ingevuld en natuurlijk de huurvoorwaarden goed gelezen.
+            Je hebt het huurcontract ingevuld en natuurlijk de <%= link_to "huurvoorwaarden", huurvoorwaarden_path, class: "orange_bold text-decoration-none" %> goed gelezen.
             Je hebt zelf een reisverzekering afgesloten. Kortom je bent goed voorbereid op de reis.</p>
             <p class="no-margin-btm">Wij hebben ook ons best gedaan zodat jij onbezorgd op vakantie kunt.</p>
             <p class="no-margin-btm">Op vrijdagmiddag 15:00 uur staat de camper klaar om opgehaald te worden.</p>

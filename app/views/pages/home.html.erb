@@ -9,7 +9,25 @@
       <%= link_to "BOEKEN", new_booking_path, class: "btn-main" %>
     </div>
   </div>
+  <% if flash[:notice] == 'Request was successfully created.' %>
+    <div data-controller="modal" data-modal-target="modal" class="modal fade show dark-backdrop" id="staticBackdropLive" style="display: block;" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" role="dialog" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-borders10 p12">
+          <div class="modal-header small-orange-border">
+            <h1 class="modal-title fs-5" id="staticBackdropLiveLabel">Boeking geslaagd!</h1>
+            <button type="button" class="btn-close" data-action="click->modal#close"></button>
+          </div>
+          <div class="modal-body">
+            <p>U kunt spoedig een email verwachten met de details voor het voldaan van de borg.</p>
+            <p>Tevens kunt u hier de details van uw boeking bekijken en ons eventueel contacten mogen zaken onduidelijk zijn.</p>
+            <p><em>Dank voor uw boeking!</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <div class="bottom-line-box home"><div class="bottom-line"></div></div>
+  <i class="fa-solid fa-arrow-up d-none" id="btnUp" data-controller="upbtn" data-action="click->upbtn#goToTop" data-upbtn-target="button"></i>
 </div>
 <%= render 'gallery' %>
 <%= render 'info' %>

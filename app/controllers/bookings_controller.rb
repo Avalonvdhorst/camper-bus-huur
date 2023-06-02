@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def new
     @booking = Booking.new
   end
@@ -6,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to root_path
+      redirect_to root_path, notice: 'Request was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

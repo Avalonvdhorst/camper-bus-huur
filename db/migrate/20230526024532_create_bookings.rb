@@ -12,10 +12,10 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.date :startdatum
       t.date :einddatum
       t.string :bestuurder
-      t.string :geboortedatum
+      t.date :geboortedatum
       t.string :rijbewijsnummer
       t.string :bestuurder_twee
-      t.string :geboortedatum_twee
+      t.date :geboortedatum_twee
       t.string :rijbewijsnummer_twee
 
       t.timestamps

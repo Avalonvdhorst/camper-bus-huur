@@ -1,0 +1,62 @@
+<%= render "shared/admin_navbar" %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <p class="text-center header-admin mt24 mb48">Aankomende boekingen:</p>
+      <% if @upcoming_bookings.empty? %>
+        <p>Sorry er geen momenteel geen aankomende boekingen.</p>
+      <% else %>
+        <table class="table mb48">
+          <thead>
+            <tr>
+              <th scope="col">Naam</th>
+              <th scope="col">Start - einddatum</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contract</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @upcoming_bookings.each do |booking| %>
+              <tr>
+                <td class="pt18 pb18"><%= booking.voornaam.capitalize %> <%= booking.achternaam.capitalize %></td>
+                <td class="pt18 pb18"><%= booking.startdatum.strftime("%d %b %Y") %> - <%= booking.einddatum.strftime("%d %b %Y") %></td>
+                <td class="pt18 pb18"><%= booking.email %></td>
+                <td class="pt18 pb18">PDF</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+
+       <p class="text-center header-admin mt24 mb48">Verleden boekingen:</p>
+      <% if @past_bookings.empty? %>
+        <p>Sorry er zijn nog geen verleden boekingen.</p>
+      <% else %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Naam</th>
+              <th scope="col">Start - einddatum</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contract</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @past_bookings.each do |booking| %>
+              <tr>
+                <td class="pt18 pb18"><%= booking.voornaam.capitalize %> <%= booking.achternaam.capitalize %></td>
+                <td class="pt18 pb18"><%= booking.startdatum.strftime("%d %b %Y") %> - <%= booking.einddatum.strftime("%d %b %Y") %></td>
+                <td class="pt18 pb18"><%= booking.email %></td>
+                <td class="pt18 pb18">PDF</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-4">
+      <p class="text-center header-admin mt24 mb48">Beschikbaarheid van de camper:</p>
+      <%= render "calendar", bookings: @bookings, booking_dates: @booking_dates %>
+    </div>
+  </div>
+</div>

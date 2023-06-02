@@ -4,7 +4,6 @@
   z-index: 1;
   position: sticky;
   top: 0;
-  position: absolute;
   width: 100%;
   font-size: 24px;
   padding: 24px;
@@ -18,6 +17,9 @@
   }
 }
 
+.nav-absolute {
+  position: absolute;
+}
 
 .nav-content {
   display: flex;
@@ -36,4 +38,28 @@
 
 .menu-items > div {
   margin-left: 48px;
+}
+
+.nav-links {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $orange;
+  }
+}
+
+.admin-nav {
+  background-color: $orange;
+}
+
+.nav-link-admin {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;
+  }
 }

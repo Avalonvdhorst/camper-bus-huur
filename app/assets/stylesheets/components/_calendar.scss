@@ -4,7 +4,7 @@
 }
 
 .day-marked {
-  background-color: $blocked-gray;
+  background-color: $blocked-gray !important;
   border-radius: 10px;
   margin: 0px 7px;
   transition: 0.3s ease-in-out;
@@ -54,16 +54,23 @@
 
 .simple-calendar .prev-month {
   background-color: $light-salmon;
-  color: $light-gray
+  color: $light-salmon;
+  .day-marked {
+    background-color: $light-salmon !important;
+  }
 }
 
 .simple-calendar .next-month {
   background-color: $light-salmon;
-  color: $light-gray;
+  color: $light-salmon;
+  .day-marked {
+    background-color: $light-salmon !important;
+  }
 }
 
 .simple-calendar .day {
  height: 55px;
+ font-weight: 500;
 }
 
 .simple-calendar .today {

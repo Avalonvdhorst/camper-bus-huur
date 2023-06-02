@@ -15,39 +15,6 @@
   }
 }
 
-.bottom-line-box {
-  display: flex;
-  justify-content: center;
-  height: 60px;
-
-  .bottom-line {
-    border: 2.5px solid $orange;
-    margin-top: 10px;
-  }
-}
-
-.bottom-line-box.home {
-  transform: translateY(-60px);
-}
-
-.bottom-line-box.gallery {
-  transform: translateY(-184px);
-}
-
-
-.top-line-box {
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  margin-bottom: 24px;
-  // transform: translateY(-100px);
-
-  .top-line {
-    border: 2.5px solid $orange;
-    margin-bottom: 10px;
-  }
-}
-
 .sub-header {
   width: 500px;
 

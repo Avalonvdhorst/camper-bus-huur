@@ -1,0 +1,6 @@
+<div>
+  <%= month_calendar(events: bookings, attribute: :startdatum) do |date, booking| %>
+    <%# booking_range = (booking.first.startdatum..booking.first.einddatum).to_a unless booking.empty? %>
+    <div class="calendar-day <%= "day-marked" if booking_dates.include?(date) %>" ><%= date.day %></div>
+  <% end %>
+</div>

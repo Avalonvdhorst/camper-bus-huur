@@ -1,4 +1,4 @@
-<div class="bg-salmon pb-5">
+<div id="availability" class="bg-salmon pb-5">
   <div class="top-line-box"><div class="top-line"></div></div>
     <div class="container">
       <h1 class="page-header text-center mb48">Beschikbaarheid</h1>
@@ -8,7 +8,7 @@
             <div class="w75">
               <p>Zie wanneer de camper beschikbaar is voor verhuur.
               De camper wordt per week van vrijdag tot vrijdag verhuurd. </p>
-              <p>Lees hier de huurvoorwaarden nog eens goed door.</p>
+              <p>Lees hier de <%= link_to "huurvoorwaarden", huurvoorwaarden_path, class: "orange_bold text-decoration-none" %> nog eens goed door.</p>
               <div class="d-flex align-items-center mt48 mb72">
                 <div class="unavailable"></div>
                 <p class="ml12 no-margin-btm"><strong>Niet beschikbaar</strong></p>
@@ -19,12 +19,7 @@
         </div>
         <div class="col-lg-1"></div>
         <div class="col-12 col-lg-4">
-          <div>
-            <%= month_calendar do |date| %>
-              <%# day_events = @goal_events.where(end_date: date) %>
-              <div class="calendar-day"><%= date.day %></div>
-            <% end %>
-          </div>
+          <%= render "calendar", bookings: @bookings, booking_dates: @booking_dates %>
         </div>
       </div>
     </div>

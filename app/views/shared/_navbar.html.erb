@@ -1,23 +1,23 @@
-<div class="navbar">
+<div class="navbar nav-absolute">
   <div class="container nav-content">
     <%= link_to root_path do %>
       <%= image_tag("camper-van-large.png") %>
     <% end %>
     <div class="menu-items">
       <div>
-        <p>Gallerij</p>
+        <p class="nav-links"><%= link_to "Gallerij", anchor: "gallery" %> </p>
         <div class="orange-bottom"></div>
       </div>
       <div>
-        <p>Camper huren en dan?</p>
+        <p class="nav-links"><%= link_to "Camper huren en dan?", anchor: "info" %> </p>
         <div class="orange-bottom"></div>
       </div>
       <div>
-        <p>Over ons</p>
+        <p class="nav-links"><%= link_to "Over ons", anchor: "about-us" %> </p>
         <div class="orange-bottom"></div>
       </div>
       <div>
-        <p>Beschikbaarheid</p>
+        <p class="nav-links"><%= link_to "Beschikbaarheid", anchor: "availability" %> </p>
         <div class="orange-bottom"></div>
       </div>
     </div>

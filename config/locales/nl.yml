@@ -37,7 +37,6 @@ nl:
               blank: "moet ingevuld worden"
             einddatum:
               blank: "moet ingevuld worden"
-  simple_calendar:
-    date:
-      month_names: ["","Januari","Februari","Maart","April","Mei","Juni","Juli","Augustus","September","Oktober","November","December"]
-      abbr_day_names: ["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"]
+  date:
+    month_names: [~, Januari, Februari, Maart, April, Mei, Juni, Juli, Augustus, September, Oktober, November, December]
+    abbr_day_names: [Zondag, Maandag, Dinsdag, Woensdag, Donderdag, Vrijdag, Zaterdag]

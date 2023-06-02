@@ -1,7 +1,25 @@
-<div class="full-page road-horizontal" style="background-image: linear-gradient(119.72deg, rgba(0, 0, 0, 0.7) 47.57%, rgba(0, 0, 0, 0.574) 73.7%, rgba(0, 0, 0, 0) 92.27%), url('<%= image_path("road-horizontal.jpg") %>');">
+<div id="gallery" class="full-page road-horizontal" style="background-image: linear-gradient(119.72deg, rgba(0, 0, 0, 0.7) 47.57%, rgba(0, 0, 0, 0.574) 73.7%, rgba(0, 0, 0, 0) 92.27%), url('<%= image_path("road-horizontal.jpg") %>');">
   <div class="top-line-box"><div class="top-line"></div></div>
-    <div class="container d-flex justify-content-center h-100">
-      <h1 class="page-header">Gallerij</h1>
+  <div class="container d-flex flex-column h-100">
+    <h1 class="page-header text-center w-100">Gallerij</h1>
+    <div id="carousel" data-auto="true">
+      <div id="scene">
+        <%= image_tag("afb1.jpg", class: "carousel_item") %>
+        <%= image_tag("afb2.jpg", class: "carousel_item") %>
+        <%= image_tag("afb3.jpg", class: "carousel_item") %>
+        <%= image_tag("afb4.jpg", class: "carousel_item") %>
+        <%= image_tag("afb5.jpg", class: "carousel_item") %>
+        <%= image_tag("afb6.jpg", class: "carousel_item") %>
+        <%= image_tag("afb7.jpg", class: "carousel_item") %>
+        <%= image_tag("afb8.jpg", class: "carousel_item") %>
+        <%= image_tag("afb9.jpg", class: "carousel_item") %>
+      </div>
+
+      <div id="carousel_btn" class="d-flex justify-content-center mt-5">
+        <div class="btn prev"><i class="fa-solid fa-chevron-left prev"></i></div>
+        <div class="btn next"><i class="fa-solid fa-chevron-right next"></i></div>
+      </div>
     </div>
+  </div>
   <div class="bottom-line-box gallery"><div class="bottom-line"></div></div>
 </div>
