@@ -3,6 +3,12 @@
   top: 150px;
 }
 
+.fixed-calendar {
+  position: fixed;
+  top: 95px;
+  right: 48px;
+}
+
 .day-marked {
   background-color: $blocked-gray !important;
   border-radius: 10px;

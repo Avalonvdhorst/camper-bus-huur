@@ -42,8 +42,6 @@ function carouselRUN() {
       carousel_btn.addEventListener('click', function(e) {
           e.stopPropagation();
           var target = e.target;
-          console.log(carousel_btn)
-          console.log(target)
 
           if (target.classList.contains('next')) {
               curr_carousel_items_Arrey++;

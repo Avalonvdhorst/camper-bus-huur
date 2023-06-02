@@ -15,8 +15,6 @@ export default class extends Controller {
 
   #hideOrDisplayBtnOnScroll() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      console.log(document.body.scrollTop)
-      console.log(document.documentElement.scrollTop)
       this.buttonTarget.classList.add("d-block")
       this.buttonTarget.classList.remove("d-none");
     } else {

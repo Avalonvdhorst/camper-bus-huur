@@ -14,6 +14,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def block
+    @booking = Booking.new
+  end
+
+  def block_dates
+    @booking = Booking.new(block_params)
+    if @booking.save
+      redirect_to admin_path, notice: "Gelukt! Datums zijn geblokkeerd"
+    else
+      redirect_to admin_path, notice: "Sorry er is iets mis gegaan, neem contact op met Ava"
+    end
+  end
+
   private
 
   def booking_params
@@ -23,5 +36,22 @@ class BookingsController < ApplicationController
                   :startdatum, :einddatum, :bestuurder, :geboortedatum,
                   :rijbewijsnummer, :bestuurder_twee, :geboortedatum_twee,
                   :rijbewijsnummer_twee)
+  end
+
+  def block_params
+    {
+      voornaam: "De",
+      achternaam: "Familie",
+      adres: "Vinkenhof",
+      woonplaats: "Stadskanaal",
+      telefoonnummer: "0599622237",
+      email: "rjvanderhorst@ziggo.nl",
+      identiteitsbewijs: "123456",
+      startdatum: params[:booking][:startdatum],
+      einddatum: params[:booking][:einddatum],
+      bestuurder: "Familie",
+      geboortedatum: "1957-09-20",
+      rijbewijsnummer: "654321"
+    }
   end
 end

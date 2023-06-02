@@ -1,7 +1,7 @@
 <%= render "shared/admin_navbar" %>
 <div class="container">
   <div class="row">
-    <div class="col-12 col-lg-8">
+    <div class="col-12 col-lg-7">
       <p class="text-center header-admin mt24 mb48">Aankomende boekingen:</p>
       <% if @upcoming_bookings.empty? %>
         <p>Sorry er geen momenteel geen aankomende boekingen.</p>
@@ -54,9 +54,12 @@
         </table>
       <% end %>
     </div>
-    <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-4 fixed-calendar">
       <p class="text-center header-admin mt24 mb48">Beschikbaarheid van de camper:</p>
       <%= render "calendar", bookings: @bookings, booking_dates: @booking_dates %>
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <%= link_to "Blokkeer datums", admin_block_path, class: "btn-secondary" %>
+      </div>
     </div>
   </div>
 </div>
