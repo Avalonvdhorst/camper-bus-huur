@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.huurprijs = ((booking.einddatum - booking.startdatum).to_i / 7) * 870
+    @booking.restant = @booking.huurprijs - 680
     if @booking.save
       redirect_to root_path, notice: 'Request was successfully created.'
     else
