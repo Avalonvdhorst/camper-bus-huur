@@ -7,6 +7,8 @@ class Booking < ApplicationRecord
   validate :start_and_end_on_friday
   validate :start_and_end_date_not_in_past
 
+  after_create :create_booking_pdf
+
   private
 
   def no_overlapping_bookings
@@ -24,5 +26,11 @@ class Booking < ApplicationRecord
   def start_and_end_date_not_in_past
     errors.add(:startdatum, 'kan niet in het verleden zijn') if startdatum.present? && startdatum < Date.today
     errors.add(:einddatum, 'kan niet in het verleden zijn') if einddatum.present? && einddatum < Date.today
+  end
+
+  def create_booking_pdf
+    pdf = BookingPdf.new(self)
+    pdf.generate_pdf
+    pdf.render_file "pdfs/#{voornaam}-#{achternaam}-#{identiteitsbewijs}.pdf"
   end
 end

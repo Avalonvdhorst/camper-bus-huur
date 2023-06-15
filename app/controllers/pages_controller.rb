@@ -6,8 +6,9 @@ class PagesController < ApplicationController
   def huurvoorwaarden; end
 
   def admin
-    @upcoming_bookings = Booking.where('einddatum > ?', Date.today)
-    @past_bookings = Booking.where('einddatum < ?', Date.today)
+    @bookings = Booking.where.not(email: "rjvanderhorst@ziggo.nl")
+    @upcoming_bookings = @bookings.where('einddatum > ?', Date.today)
+    @past_bookings = @bookings.where('einddatum < ?', Date.today)
   end
 
   private

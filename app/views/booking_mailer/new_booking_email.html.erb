@@ -1,0 +1,16 @@
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <div style="margin: 0 auto;">
+    <h2 style="text-align:center;">Je hebt een nieuwe boeking binnen van <%= @booking.voornaam %> <%= @booking.achternaam %>!</h2 class="text-center">
+    <h3 style="text-align:center; margin-bottom: 0px;">
+      Boeking Details:</h3>
+    <p style="text-align:center; margin-top: 2px;"> ---------------------------- </p>
+    <br>
+    <br>
+    <p> <strong>Naam:</strong> <%= @booking.voornaam %> <%= @booking.achternaam %></p>
+    <p><strong>Email:</strong> <%= @booking.email %></p>
+    <p><strong>Adres:</strong> <%= @booking.adres %> <%= @booking.woonplaats %></p>
+    <p><strong>Telefoon:</strong> <%= @booking.telefoonnummer %></p>
+    <p><strong>Datums:</strong> van <%= @booking.startdatum.strftime("%d-%m-%Y")%> tot <%= @booking.einddatum.strftime("%d-%m-%Y")%> </p>
+  </div>
+</div>

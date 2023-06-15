@@ -7,13 +7,18 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.huurprijs = ((booking.einddatum - booking.startdatum).to_i / 7) * 870
-    @booking.restant = @booking.huurprijs - 680
     if @booking.save
-      redirect_to root_path, notice: 'Request was successfully created.'
+      huurprijs_restant
+      BookingMailer.with(booking: @booking).new_booking_email.deliver_later
+      redirect_to root_path, notice: 'Booking geslaagd'
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def download_pdf
+    @booking = Booking.find(params[:id])
+    send_file "#{Rails.root}/pdfs/#{@booking.voornaam}-#{@booking.achternaam}-#{@booking.identiteitsbewijs}.pdf", type: "application/pdf", x_sendfile: true
   end
 
   def block
@@ -55,5 +60,10 @@ class BookingsController < ApplicationController
       geboortedatum: "1957-09-20",
       rijbewijsnummer: "654321"
     }
+  end
+
+  def huurprijs_restant
+    @booking.huurprijs = ((@booking.einddatum - @booking.startdatum).to_i / 7) * 870
+    @booking.restant = @booking.huurprijs - 680
   end
 end

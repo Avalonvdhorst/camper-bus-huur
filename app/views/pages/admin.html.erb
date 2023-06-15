@@ -4,7 +4,7 @@
     <div class="col-12 col-lg-7">
       <p class="text-center header-admin mt24 mb48">Aankomende boekingen:</p>
       <% if @upcoming_bookings.empty? %>
-        <p>Sorry er geen momenteel geen aankomende boekingen.</p>
+        <p>Er geen momenteel geen aankomende boekingen.</p>
       <% else %>
         <table class="table mb48">
           <thead>
@@ -21,7 +21,7 @@
                 <td class="pt18 pb18"><%= booking.voornaam.capitalize %> <%= booking.achternaam.capitalize %></td>
                 <td class="pt18 pb18"><%= booking.startdatum.strftime("%d %b %Y") %> - <%= booking.einddatum.strftime("%d %b %Y") %></td>
                 <td class="pt18 pb18"><%= booking.email %></td>
-                <td class="pt18 pb18">PDF</td>
+                <td class="pt18 pb18"><%= link_to "PDF", download_pdf_booking_path(booking), target: :blank %></td>
               </tr>
             <% end %>
           </tbody>
@@ -30,7 +30,7 @@
 
        <p class="text-center header-admin mt24 mb48">Verleden boekingen:</p>
       <% if @past_bookings.empty? %>
-        <p>Sorry er zijn nog geen verleden boekingen.</p>
+        <p>Er zijn nog geen verleden boekingen.</p>
       <% else %>
         <table class="table">
           <thead>
@@ -47,7 +47,7 @@
                 <td class="pt18 pb18"><%= booking.voornaam.capitalize %> <%= booking.achternaam.capitalize %></td>
                 <td class="pt18 pb18"><%= booking.startdatum.strftime("%d %b %Y") %> - <%= booking.einddatum.strftime("%d %b %Y") %></td>
                 <td class="pt18 pb18"><%= booking.email %></td>
-                <td class="pt18 pb18">PDF</td>
+                <td class="pt18 pb18"><%= link_to "PDF", "file:///Users/avalon/code/Avalonvdh/PROJECTS/camper-bus-huur/pdfs/test.pdf", target: :blank %></td>
               </tr>
             <% end %>
           </tbody>
@@ -55,9 +55,9 @@
       <% end %>
     </div>
     <div class="col-12 col-lg-4 fixed-calendar">
-      <p class="text-center header-admin mt24 mb48">Beschikbaarheid van de camper:</p>
+      <p class="text-center header-admin mt24 mb72">Beschikbaarheid van de camper:</p>
       <%= render "calendar", bookings: @bookings, booking_dates: @booking_dates %>
-      <div class="d-flex justify-content-center align-items-center mt-4">
+      <div class="d-flex justify-content-center align-items-center my-5">
         <%= link_to "Blokkeer datums", admin_block_path, class: "btn-secondary" %>
       </div>
     </div>

@@ -32,7 +32,7 @@ class BookingPdf
     text "Huurcontract buscamper Carthago Malibu 640"
     move_down 5
     text "Lees voor het sluiten van de overeenkomst eerst de voorwaarden."
-    move_down 15
+    move_down 30
     text "<b>1. Partijen</b>",
       inline_format: true
     move_down 10
@@ -49,7 +49,7 @@ class BookingPdf
     text "Telefoonnummer: 0599 622058  -  Mobiel: 06 51069513"
     move_down 5
     text "E-mail: info@veldstad.nl"
-    move_down 15
+    move_down 20
 
     text "<b><u>Huurder van de kampeerauto</u></b>",
       inline_format: true
@@ -70,7 +70,7 @@ class BookingPdf
     text "Email: #{@booking.email}"
     move_down 5
     text "Identiteitsbewijs: #{@booking.identiteitsbewijs}"
-    move_down 15
+    move_down 20
     text "Ondergetekenden: verhuurder van de kampeerauto, hierna genoemd 'verhuurder' en huurder van de kampeerauto hierna genoemd 'huurder', verklaren deze huurovereenkomst te zijn aangegaan volgens de volgende bepalingen en voorwaarden."
     move_down 30
   end
@@ -89,7 +89,7 @@ class BookingPdf
     text "Kenteken: H-170-JN       Brandstof: diesel"
     move_down 5
     text "Kilometerstand bij aanvang huur: ______________________km"
-    move_down 15
+    move_down 20
     text "- Bestuurder tijdens de periode: #{@booking.bestuurder}"
     move_down 5
     text "Geboortedatum: #{@geboortedatum}"
@@ -174,6 +174,7 @@ class BookingPdf
   end
 
   def nadere_afspraken
+    start_new_page
     text "<b>7. Nadere afspraken</b>",
       inline_format: true
     move_down 10
