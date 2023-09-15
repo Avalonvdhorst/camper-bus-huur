@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: camper_bus_huur_production
-  username: camper_bus_huur
-  password: <%= ENV["CAMPER_BUS_HUUR_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
